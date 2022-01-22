@@ -13,6 +13,10 @@ body {
 	font-family: $f-default;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+  @include breakpoint-up(lg) {
+    font-size: 120%;
+  }
 }
 
 main { display: block; }

@@ -3,7 +3,6 @@ const watch       = require('gulp-watch');
 const sass        = require('gulp-sass')(require('sass'));
 const sourcemaps  = require('gulp-sourcemaps');
 const sassGlob 		= require('gulp-sass-glob');
-const clean       = require('gulp-clean');
 const plumber     = require('gulp-plumber');
 const notify      = require('gulp-notify');
 const browserSync = require('browser-sync').create();
@@ -50,6 +49,6 @@ function serve () {
 
 exports.compileCss    = compileCss;
 exports.watchCss      = watchCss;
-exports.serve 				= serve;
 exports.watch         = parallel(watchCss);
 exports.default       = parallel(compileCss);
+exports.serve 				= serve;
