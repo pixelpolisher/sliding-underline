@@ -9,7 +9,7 @@ underlineNav = () => {
   const items = container.querySelectorAll(`.${namespace}__item`);
   const tracker = container.querySelector(`.${namespace}__tracker`);
   const isSearching = `${namespace}--searching`;
-  const isTouchscreen = isPointerDevice();
+  const isTouchscreen = isTouchDevice();
 
   let itemWidths = new Array();
   let itemOffsets = new Array();
@@ -84,7 +84,7 @@ underlineNav = () => {
   }
 }
 
-function isPointerDevice() {
+function isTouchDevice() {
   return ( 'ontouchstart' in window ) ||
          ( navigator.maxTouchPoints > 0 ) ||
          ( navigator.msMaxTouchPoints > 0 );
