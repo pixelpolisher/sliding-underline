@@ -6,7 +6,13 @@
   display: flex;
   align-items: center;
 
-  &--searching {
+  &--initializing {
+    #{$self}__tracker {
+      transition-duration: 0s;
+    }
+  }
+
+  &--initialized {
     #{$self}__text::before {
       display: none;
     }
@@ -30,8 +36,8 @@
     display: block;
     left: 0;
     bottom: 0;
-    height: 1px;
-    background-color: var(--color-primary-300);
+    height: 2px;
+    background-color: var(--color-primary-100);
     transition: all 0.2s cubic-bezier(0.25, 0.25, 0.25, 1.25);
   }
 
@@ -40,14 +46,14 @@
     flex-direction: column;
     justify-content: center;
     padding: 0 30px;
-    color: #fff;
+    color: var(--color-primary-200);
     text-decoration: none;
 
 
     &--here,
     &:hover,
     &:focus {
-      color: var(--color-primary-300);
+      color: var(--color-primary-100);
     }
 
     &--here #{$self}__text::before {
@@ -67,8 +73,8 @@
       left: 0;
       right: 0;
       bottom: 0;
-      height: 1px;
-      background-color: var(--color-primary-300);
+      height: 2px;
+      background-color: var(--color-primary-100);
       opacity: 0;
     }
   }

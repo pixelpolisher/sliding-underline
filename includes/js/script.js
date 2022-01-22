@@ -24,7 +24,15 @@ underlineNav = () => {
 
     if(link.classList.contains(`${namespace}__link--here`)) {
       activeItem = index;
-      tracker.setAttribute('style', `left: ${itemOffset}px; width: ${itemWidth}px`);
+      container.classList.add(`${namespace}--initializing`);
+      tracker.style.cssText =`
+        left: ${itemOffset}px;
+        width: ${itemWidth}px
+      `;
+      setTimeout(() => {
+        container.classList.remove(`${namespace}--initializing`);
+        container.classList.add(`${namespace}--initialized`);
+      }, 1);
     }
   });
 
@@ -33,11 +41,12 @@ underlineNav = () => {
   });
 
   menu.addEventListener('mouseleave', () => {
-    tracker.setAttribute('style', `left: ${itemOffsets[activeItem]}px; width: ${itemWidths[activeItem]}px`);
+    tracker.style.cssText = `
+      left: ${itemOffsets[activeItem]}px;
+      width: ${itemWidths[activeItem]}px
+    `;
 
-    setTimeout(() => {
-      container.classList.remove(isSearching);
-    }, 200);
+    container.classList.remove(isSearching);
   });
 
   items.forEach((item, index) => {

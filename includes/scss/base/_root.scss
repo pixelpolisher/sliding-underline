@@ -1,6 +1,8 @@
 :root {
-  --color-primary-100: #{$c-brand-1};
-  --color-primary-200: #{$c-brand-2};
-  --color-primary-300: #{$c-brand-3};
-  --color-primary-400: #{$c-brand-4};
+  --color-primary-100: #{$c-primary-100};
+  --color-primary-200: #{$c-primary-200};
+  --color-primary-300: #{$c-primary-300};
+  --color-primary-400: #{$c-primary-400};
+
+  --color-secondary: #{$c-secondary};
 }
