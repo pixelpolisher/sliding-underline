@@ -1,18 +1,18 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html { overflow-y: scroll; }
 
 body {
-	background: #FFF;
-	color: $c-txt;
-	font: 100%/#{$f-line-height} normal;
-	font-family: $f-default;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  background: #fff;
+  color: $c-txt;
+  font: 100%/#{$f-line-height} normal;
+  font-family: $f-default;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   @include breakpoint-up(lg) {
     font-size: 120%;
@@ -22,19 +22,20 @@ body {
 main { display: block; }
 
 a {
-	outline: none;
-	color: $c-link;
-	transition: $t-duration;
-	cursor: pointer;
+  outline: none;
+  color: $c-link;
+  transition: $t-duration;
+  cursor: pointer;
 
   &:hover,
-	&:focus,
-  .here > &
-  { color: $c-link-hover; }
+  &:focus,
+  .here > & {
+    color: $c-link-hover;
+  }
 }
 
 img {
-	border: 0;
-	max-width: 100%;
-	height: auto;
+  border: 0;
+  max-width: 100%;
+  height: auto;
 }
