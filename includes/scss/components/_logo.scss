@@ -1,0 +1,17 @@
+.logo {
+  $self: &;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  transition: width 0.5s $t-s-curve;
+
+  &__logomark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    fill: #fff;
+    transition: fill 1.5s;
+  }
+}

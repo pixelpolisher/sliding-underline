@@ -1,0 +1,11 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  &__logo {
+    margin: 20px auto 20px 0;
+    height: 50px;
+    width: 50px;
+  }
+}

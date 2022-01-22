@@ -1,0 +1,89 @@
+.nav {
+  $self: &;
+
+  --link-x-padding: 10px;
+  @include breakpoint-up(sm) { --link-x-padding: 20px; }
+  @include breakpoint-up(md) { --link-x-padding: 30px; }
+  @include breakpoint-up(lg) { --link-x-padding: 40px; }
+
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &--initializing {
+    #{$self}__tracker {
+      transition-duration: 0s;
+    }
+  }
+
+  &--initialized {
+    #{$self}__text::before {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: 1px;
+  }
+
+  &__menu {
+    position: relative;
+  }
+
+  &__tracker {
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: var(--color-primary-100);
+    transition: all 0.2s cubic-bezier(0.25, 0.25, 0.25, 1.25);
+
+    @include breakpoint-up(md) {
+      transform: scaleX(1.3);
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 var(--link-x-padding);
+    color: var(--color-primary-200);
+    text-decoration: none;
+
+    &--here,
+    &:hover,
+    &:focus {
+      color: var(--color-primary-100);
+    }
+
+    &--here #{$self}__text::before {
+      opacity: 1;
+    }
+  }
+
+  &__text {
+    position: relative;
+    display: block;
+    padding: 20px 0;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background-color: var(--color-primary-100);
+      opacity: 0;
+    }
+  }
+}
